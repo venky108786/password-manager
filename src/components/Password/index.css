@@ -1,0 +1,118 @@
+.bg {
+  background-color: #9ba9eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.logo {
+  align-self: flex-start;
+}
+.imgLogo {
+  height: 50px;
+  width: 160px;
+}
+.password-container {
+  background-color: #5763a5;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: hsl(230, 31%, 39%);
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.input-containers {
+  background-color: #fff;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+}
+.inputIconImg {
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.input {
+  border: 0px;
+  outline: none;
+  border-left: 1px solid #94a3b8;
+}
+.add-password-para {
+  color: #ffffff;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+.button {
+  background-color: #0b69ff;
+  color: #ffffff;
+  padding: 10px;
+  align-self: flex-end;
+  border-radius: 10px;
+  border: 0px;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+}
+.password-manager-Img {
+  height: 300px;
+  width: 300px;
+}
+.bottom-container {
+  background-color: #454f84;
+  padding: 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.your-password-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.margin {
+  margin-left: 240px;
+}
+.hr {
+  width: 100%;
+}
+.checkbox {
+  align-self: flex-end;
+}
+.label {
+  color: #ffffff;
+}
+.ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.no-passwordImg {
+  height: 200px;
+  width: 250px;
+}
+
+.your-password-container {
+  display: flex;
+  flex-direction: row;
+}
+.count {
+  color: #fff;
+  margin-left: 5px;
+}
