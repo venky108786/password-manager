@@ -1,14 +1,23 @@
 import {Component} from 'react'
 import './index.css'
+import {v4} from 'uuid'
 import YourPassword from '../YourPassword'
 
 class Password extends Component {
-  state = {website: '', username: '', password: '', list: [], searchInput: ''}
+  state = {
+    website: '',
+    username: '',
+    password: '',
+    list: [],
+    searchInput: '',
+    check: true,
+  }
 
   onSubmitAdd = event => {
     event.preventDefault()
     const {website, username, password} = this.state
     const newList = {
+      id: v4(),
       web: website,
       name: username,
       pws: password,
@@ -19,6 +28,13 @@ class Password extends Component {
       username: '',
       password: '',
     }))
+  }
+
+  onDelete = id => {
+    const {list} = this.state
+    this.setState({
+      list: list.filter(each => each.id !== id),
+    })
   }
 
   searchingResult = () => {
@@ -45,10 +61,15 @@ class Password extends Component {
     this.setState({searchInput: event.target.value})
   }
 
+  onchangeCheckBox = () => {
+    this.setState(prv => ({check: !prv.check}))
+  }
+
   render() {
     // eslint-disable-next-line no-unused-vars
-    const {website, username, password, list, searchInput} = this.state
+    const {website, username, password, list, searchInput, check} = this.state
     const searchResult = this.searchingResult()
+
     return (
       <div className="bg">
         <div className="logo">
@@ -139,14 +160,27 @@ class Password extends Component {
           </div>
           <hr className="hr" />
           <div className="checkbox">
-            <input type="checkbox" id="check" />
+            <input
+              type="checkbox"
+              id="check"
+              value={check}
+              onChange={this.onchangeCheckBox}
+            />
             <label htmlFor="check" className="label">
               Show passwords
             </label>
           </div>
           <ul className="ul">
             {searchResult.length > 0 ? (
-              searchResult.map(each => <YourPassword each={each} />)
+              searchResult.map(each => (
+                <YourPassword
+                  each={each}
+                  key={each.id}
+                  check={check}
+                  onD
+                  elete={this.onDelete}
+                />
+              ))
             ) : (
               <div>
                 <img
